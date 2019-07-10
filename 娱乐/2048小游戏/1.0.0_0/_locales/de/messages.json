@@ -1,0 +1,56 @@
+{
+   "2048_tile": {
+      "message": " 2048 Kachel!"
+   },
+   "app_desc": {
+      "message": "Spielen Sie 2048 im Popup !!! Speichern Sie automatisch Datensätze, die höchste Punktzahl in der Geschichte."
+   },
+   "app_name": {
+      "message": "2048 In Popup"
+   },
+   "app_short_name": {
+      "message": "2048"
+   },
+   "arrow_keys": {
+      "message": "Pfeiltasten"
+   },
+   "best": {
+      "message": "Best"
+   },
+   "game_over": {
+      "message": "Spiel vorbei!"
+   },
+   "how_to_play": {
+      "message": "How to play:"
+   },
+   "join_the_numbers": {
+      "message": "Verbinde die Zahlen und komm zu "
+   },
+   "keep_going": {
+      "message": "Weiter"
+   },
+   "merge_into_one": {
+      "message": "verschmelzen zu einer!"
+   },
+   "new_game": {
+      "message": "Neues Spiel"
+   },
+   "popup_desc": {
+      "message": "Spielen Sie 2048 im Popup-Fenster !!! \n\n Speichern Sie automatisch Datensätze, die höchste Punktzahl im Verlauf."
+   },
+   "score": {
+      "message": "Score"
+   },
+   "to_move_tiles": {
+      "message": " um die Kacheln zu verschieben. Wenn sich zwei Kacheln mit derselben Nummer berühren, werden sie "
+   },
+   "try_again": {
+      "message": "Erneut versuchen"
+   },
+   "use_your": {
+      "message": " Verwenden Sie Ihre "
+   },
+   "you_win": {
+      "message": "Sie gewinnen!"
+   }
+}

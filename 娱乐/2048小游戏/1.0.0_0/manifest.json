@@ -1,0 +1,25 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "img/icon-48.png",
+      "default_popup": "popup.html",
+      "default_title": "__MSG_popup_desc__"
+   },
+   "default_locale": "en",
+   "description": "__MSG_app_desc__",
+   "homepage_url": "http://www.haohuu.com",
+   "icons": {
+      "128": "img/icon-128.png",
+      "16": "img/icon-16.png",
+      "48": "img/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp+OzxfNx+iJnK15b0Nz9WXAv6n2tMNNvg9g6k9Ge9HKRStl/4tog5fFj+VKSkrNk1ABK/HvEF1D8UNs3hoC19mF7ugKiK+rUAqVPUK0w4Iobip7ehWaL2qmVCDLIeNKGrzyQytfHKZ3kmSo1Uli0UqAKGLvsrVypg9KfyrLEJR4MLEaVaceWR5d3fd8jze2SvqPyPNfG6nPdrBqGNvj351+fWbGn4Sw3HWYto6e9NGYdjnaUsMZoT0aedC+4ai33PyQh+G1uXQBQ2n/mcXXbCZQv/VHn8yPEfqwQyFM3zTieQvFxmO63bJQsBNbuU6HrtrR81kcuxi9ydqqRVhNnHQIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_app_name__",
+   "permissions": [ "storage" ],
+   "short_name": "__MSG_app_short_name__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0"
+}

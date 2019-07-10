@@ -1,0 +1,56 @@
+{
+   "2048_tile": {
+      "message": " 2048 tuile!"
+   },
+   "app_desc": {
+      "message": "Jouez 2048 dans le popup !!! Sauvegardez automatiquement les enregistrements, le score le plus élevé de l'histoire."
+   },
+   "app_name": {
+      "message": "2048 In Popup"
+   },
+   "app_short_name": {
+      "message": "2048"
+   },
+   "arrow_keys": {
+      "message": "touches fléchées"
+   },
+   "best": {
+      "message": "Best"
+   },
+   "game_over": {
+      "message": "Jeu terminé!"
+   },
+   "how_to_play": {
+      "message": "Comment jouer:"
+   },
+   "join_the_numbers": {
+      "message": "Joignez les numéros et accédez au "
+   },
+   "keep_going": {
+      "message": "Continuez"
+   },
+   "merge_into_one": {
+      "message": "fusionner en un!"
+   },
+   "new_game": {
+      "message": "Nouveau jeu"
+   },
+   "popup_desc": {
+      "message": "Jouez 2048 dans le popup !!!\n\n Sauvegardez automatiquement les enregistrements, le score le plus élevé de l'histoire."
+   },
+   "score": {
+      "message": "Score"
+   },
+   "to_move_tiles": {
+      "message": " pour déplacer les tuiles. Lorsque deux tuiles portant le même numéro se touchent, elles "
+   },
+   "try_again": {
+      "message": "Essayez à nouveau"
+   },
+   "use_your": {
+      "message": " Utilisez votre "
+   },
+   "you_win": {
+      "message": "Vous gagnez!"
+   }
+}

@@ -1,0 +1,56 @@
+{
+   "2048_tile": {
+      "message": "2048！"
+   },
+   "app_desc": {
+      "message": "ポップアップウィンドウで2048 !!!をプレイして自動的に記録を保存します。これは歴史上最高の得点です。"
+   },
+   "app_name": {
+      "message": "2048 ポップアップ版"
+   },
+   "app_short_name": {
+      "message": "2048"
+   },
+   "arrow_keys": {
+      "message": "方向キー"
+   },
+   "best": {
+      "message": "最高"
+   },
+   "game_over": {
+      "message": "ゲームオーバーです！"
+   },
+   "how_to_play": {
+      "message": "遊び方："
+   },
+   "join_the_numbers": {
+      "message": "番号をマージして到達する"
+   },
+   "keep_going": {
+      "message": "続行"
+   },
+   "merge_into_one": {
+      "message": "一つにマージする！"
+   },
+   "new_game": {
+      "message": "新しいゲーム"
+   },
+   "popup_desc": {
+      "message": "ポップアップウィンドウで2048 !!!\n\nをプレイして自動的に記録を保存します。これは歴史上最高の得点です。"
+   },
+   "score": {
+      "message": "スコア"
+   },
+   "to_move_tiles": {
+      "message": "正方形の移動。同じ番号を持つ2つのブロックが接触すると、彼らはします"
+   },
+   "try_again": {
+      "message": "再試行"
+   },
+   "use_your": {
+      "message": "使用"
+   },
+   "you_win": {
+      "message": "勝利！"
+   }
+}

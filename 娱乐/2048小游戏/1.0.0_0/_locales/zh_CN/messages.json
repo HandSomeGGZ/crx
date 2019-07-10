@@ -1,0 +1,56 @@
+{
+   "2048_tile": {
+      "message": "2048！"
+   },
+   "app_desc": {
+      "message": "在弹窗中玩2048!!! 自动保存记录，历史最高分。"
+   },
+   "app_name": {
+      "message": "2048 弹窗版"
+   },
+   "app_short_name": {
+      "message": "2048"
+   },
+   "arrow_keys": {
+      "message": "方向键"
+   },
+   "best": {
+      "message": "最高分"
+   },
+   "game_over": {
+      "message": "游戏结束！"
+   },
+   "how_to_play": {
+      "message": "玩法："
+   },
+   "join_the_numbers": {
+      "message": "合并数字并达到"
+   },
+   "keep_going": {
+      "message": "继续"
+   },
+   "merge_into_one": {
+      "message": "合并成一个！"
+   },
+   "new_game": {
+      "message": "新游戏"
+   },
+   "popup_desc": {
+      "message": "在弹窗中玩2048!!!\n\n自动保存记录，历史最高分。"
+   },
+   "score": {
+      "message": "分数"
+   },
+   "to_move_tiles": {
+      "message": "移动方块。当两个具有相同数字的方块接触时，它们会"
+   },
+   "try_again": {
+      "message": "重试"
+   },
+   "use_your": {
+      "message": "使用"
+   },
+   "you_win": {
+      "message": "胜利！"
+   }
+}

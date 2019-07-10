@@ -1,0 +1,56 @@
+{
+   "2048_tile": {
+      "message": " 2048 tessera!"
+   },
+   "app_desc": {
+      "message": "Riproduci 2048 nel popup !!! Salva automaticamente i record, il punteggio più alto nella storia."
+   },
+   "app_name": {
+      "message": "2048 In Popup"
+   },
+   "app_short_name": {
+      "message": "2048"
+   },
+   "arrow_keys": {
+      "message": "tasti freccia"
+   },
+   "best": {
+      "message": "Migliore"
+   },
+   "game_over": {
+      "message": "Game over!"
+   },
+   "how_to_play": {
+      "message": "Come si gioca:"
+   },
+   "join_the_numbers": {
+      "message": "Unisci i numeri e raggiungi "
+   },
+   "keep_going": {
+      "message": "Continua"
+   },
+   "merge_into_one": {
+      "message": "unisci in uno!"
+   },
+   "new_game": {
+      "message": "Nuovo gioco"
+   },
+   "popup_desc": {
+      "message": "Riproduci 2048 nel popup !!!\n\n Salva automaticamente i record, il punteggio più alto nella storia."
+   },
+   "score": {
+      "message": "Punteggio"
+   },
+   "to_move_tiles": {
+      "message": " per spostare le tessere Quando due tessere con lo stesso numero toccano, "
+   },
+   "try_again": {
+      "message": "Riprova"
+   },
+   "use_your": {
+      "message": " Usa il tuo "
+   },
+   "you_win": {
+      "message": "Hai vinto!"
+   }
+}

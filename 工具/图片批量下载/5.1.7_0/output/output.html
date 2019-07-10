@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="../css/smoothness/jquery-ui-1.10.3.custom.min.css" />
+        <link rel="stylesheet" href="../vue-com/coms.css">
+        <link rel="stylesheet" href="output.css">
+        <link rel="stylesheet" href="../lib/vue-element/index.css">
+        <script src="../lib/vue.min.js"></script>
+        <script src="../lib/vue-element/index.js"></script>
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div id="header">
+                <div id="logo">
+                    <img src="../icon.png" width="32px" height="32px" alt="">
+                    <div id="title">
+                        <span id="title-1">Fatkun</span></br>
+                        <span id="title-2">{{i18n.title}}</span>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="btn-1" id="btn-sort" @click="showSort = !showSort">
+                        <img src="icons/icon_order.png"></img><span>{{i18n.sort}}</span>
+                        <div id="sort-wrapper" v-bind:class="{active: showSort}">
+                            <div class="sort-item" v-bind:class="{selected: sortType == 'default'}"
+                                data-tj-btn="sort-by-default"
+                                @click.stop="sortBy('default')"><span></span>{{i18n.sortByDefault}}</div>
+                            <!--<div class="sort-item" v-bind:class="{selected: sortType == 'site'}"-->
+                                <!--data-tj-btn="sort-by-site"-->
+                                <!--@click.stop="sortBy('site')"><span></span>按网站排序</div>-->
+                            <div class="sort-item" v-bind:class="{selected: sortType == 'bigFirst'}"
+                                data-tj-btn="sort-by-big-first"
+                                @click.stop="sortBy('bigFirst')"><span></span>{{i18n.sortByBigFirst}}</div>
+                            <div class="sort-item" v-bind:class="{selected: sortType == 'smallFirst'}"
+                                data-tj-btn="sort-by-small-first"
+                                @click.stop="sortBy('smallFirst')"><span></span>{{i18n.sortBySmallFirst}}</div>
+                        </div>
+                    </div>
+                    <div class="btn-1" id="btn-view"
+                        data-tj-btn="change-view"
+                        @click="changeView()">
+                        <img src="icons/icon_view.png"></img><span>{{i18n.view}}</span>
+                    </div>
+                    <!--<div class="btn-1" id="btn-dashang">-->
+                        <!--<img src="icons/icon_code.png"></img><span>打赏</span>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div id="filter-size" class="module">
+                <div class="slide-num">
+                    <span class="slice-label">{{i18n.width}}: </span>
+                    <el-slider
+                          v-model="widthRange"
+                          range
+                          @change="saveWidthRange"
+                          :max="maxWidth">
+                        </el-slider>
+                </div>
+                <div class="slide-num">
+                    <span class="slice-label">{{i18n.height}}: </span>
+                    <el-slider
+                          v-model="heightRange"
+                          range
+                          @change="saveHeightRange"
+                          :max="maxHeight">
+                        </el-slider>
+                </div>
+                <el-checkbox v-model="rememberFilter">{{i18n.remember}}</el-checkbox>
+                <div id="filter-url" class="module">
+                    <el-input
+                      size="mini"
+                      :placeholder="i18n.urlfilterPlaceholder"
+                      v-model="urlfilter">
+                    </el-input>
+                    <el-select
+                      v-model="selectedTabs"
+                      multiple
+                      collapse-tags
+                      style="margin-left: 20px;"
+                      :placeholder="i18n.filterByPage">
+                      <el-option
+                        v-for="item in startedTabs"
+                        :key="item.id"
+                        :label="item.shortTitle"
+                        :value="item.id">
+                          <img :src="item.favIconUrl" alt="">
+                          <span>{{item.shortTitle}}</span>
+                      </el-option>
+                    </el-select>
+                </div>
+                <div class="btn btn-3" id="reset-filter" @click="resetFilter" data-tj-btn="reset-filter">{{i18n.reset}}</div>
+            </div>
+            <div id="main-btns" class="module">
+                <button class="btn btn-2" id="download-btn" @click="download"
+                    data-tj-btn="download"
+                    :disabled="downloader.status.match('started|resumed')">
+                    <div class="icon"></div>
+                    <span class="label">{{i18n.download}}</span>
+                </button>
+                <button class="btn btn-3" id="pause-btn" @click="pauseDownload"
+                                          data-tj-btn="pause"
+                                          :disabled="downloader.status.match('not-inited|complete')">
+                    <span class="label">{{downloader.status == 'paused'? i18n.resume: i18n.pause}}</span>
+                </button>
+                <button class="btn btn-3" id="toggle-btn" @click="toggle" data-tj-btn="toggle">
+                    <span class="label">{{i18n.toggle}}</span>
+                </button>
+                <button class="btn btn-3" id="select-all-btn" @click="selectAll" data-tj-btn="select-all">
+                    <span class="label">{{i18n.selectAll}}</span>
+                </button>
+                <!--<div class="btn btn-3" id="rename-btn">-->
+                    <!--<span class="label">重命名</span>-->
+                <!--</div>-->
+                <button class="btn btn-3" id="export-links-btn" @click="exportLinks" data-tj-btn="export-links">
+                    <div class="icon"></div>
+                    <span class="label">{{i18n.exportLinks}}</span>
+                </button>
+                <div id="rename-wrapper">
+                    <div class="cb-container">
+                        <input type="checkbox" id="rename-checkbox" v-model="needRename">
+                        <label for="rename-checkbox" class="cb-label"></label>
+                        <span>{{i18n.rename}}</span>
+                    </div>
+                    <el-input
+                      size="mini"
+                      :disabled="!needRename"
+                      v-model="renameRule">
+                    </el-input>
+                </div>
+                <div class="cb-container">
+                    <input type="checkbox" id="unique-checkbox" v-model="unique">
+                    <label for="unique-checkbox" class="cb-label"></label>
+                    <span>{{i18n.unique}}</span>
+                </div>
+                <div id="concurrent-wrapper">
+                    <label for="">
+                        <span>{{i18n.concurrent}}</span>
+                        <el-input-number size="small" v-model="concurrent"  :step="1" :max="10" :min="1"></el-input-number>
+                    </label>
+                </div>
+                <div id="pic-num-tips">
+                    <span id="selected-num"> {{i18n.selected}} : {{selectedImgs.length}} / </span>
+                    <span id="total-num">{{i18n.total}} : {{showImgList.length}} / </span>
+                    <span id="downloaded-num" class="hide-in-qqbrowser">{{i18n.downloaded}} : {{downloadedImgs.length}}</span>
+                </div>
+            </div>
+            <div id="main-content">
+                <el-pagination v-if="showImgList.length > pageSize"
+                    small
+                    :current-page="currentPage"
+                    :page-size="pageSize" 
+                    :pager-count="11"
+                    layout="prev, pager, next"
+                    :total="showImgList.length"
+                    @current-change= "changePage"
+                    :hide-on-single-page="true"
+                    >
+                </el-pagination>
+                <div id="pic-list" v-bind:class="{spread: viewModel == 'spread'}" :style="'width:'+picListWidth+'px;'">
+                    <div 
+                     :id="item.id"
+                     class="img-item" v-bind:class="{ selected: item.selected  }" v-for="(item, index) in currentPageImgs" @click="itemClick(item)" :data-index="index"
+                        >
+                        <svg class="icon status" aria-hidden="true" v-if="item.status == 'complete'">
+                            <use xlink:href="#icon-check-circle"></use>
+                        </svg>
+                        <div class="url-wrapper" v-if="config.showUrl">{{item.bigUrl}}</div>
+                        <div class="img-wrapper" v-if="item.type == 'IMG'">
+                            <img :src="item.blobUrl || item.smallUrl" alt="" :data-original-url="item.originalUrl">
+                            <div class="img-size">
+                                <span>{{item.width+'x'+item.height}}</span>
+                                <!--<span :class="'hide-in-qqbrowser status status-'+item.status">{{item.status}}</span>-->
+                            </div>
+                        </div>
+                        <div class="video-wrapper" v-if="item.type == 'VIDEO'">
+                            <video :src="item.originalUrl" controls></video>
+                        </div>
+                        <div class="btns">
+                            <div class="btn" id="btn-view-big" @click.stop="viewBig(index)">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="btn" id="btn-weibo" @click.stop="share(item)">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="btn" id="btn-link" @click.stop="openLink(item.bigUrl)">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="btn" id="btn-download-single" @click.stop="downloadSingle(item)">
+                                <div class="icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer-pagination">
+                <el-pagination v-if="showImgList.length > pageSize"
+                    :current-page="currentPage"
+                    :page-size="pageSize" 
+                    :pager-count="11"
+                    layout="prev, pager, next"
+                    :total="showImgList.length"
+                    @current-change= "changePage"
+                    :hide-on-single-page="true"
+                    >
+                </el-pagination>
+            </div>
+            <div id="outputTextPanel" class="pop" v-if="showOutputTextPanel">
+                <span data-msg="export_format">{{i18n.format}}</span>: 
+                <input id="outputTextFormat" type="text" v-model="outputTextFormat" :title="i18n.renameTip"  data-msg-title="export_format_tips"/>
+                <input id="btnOutputTextClose" type="button" :value="i18n.close" data-msg="export_close" class="btn btn-primary" style="margin-left:15px;" @click="closeLinksPanel"/>
+                <input id="btnOutputTextReset" type="button" :value="i18n.reset" data-msg="export_reset" class="btn btn-primary" style="margin-left:15px;" @click="resetOutputTextFormat"/>
+                <br/>
+                <textarea id="outputTextArea" :value="outputText"></textarea>
+            </div>
+            <el-dialog
+              :title="i18n.saveTipsDialogTitle"
+              :visible.sync="showSaveTips"
+              width="30%"
+              :before-close="saveTipsClose">
+                <span>{{i18n.saveTips}}</span>
+                </br>
+                </br>
+                <el-checkbox v-model="saveTipsDoNotShowAgain">{{i18n.doNotShowAgain}}</el-checkbox>
+              <span slot="footer" class="dialog-footer">
+                  <el-button @click="showSaveTips = false">{{i18n.tipsCancel}}</el-button>
+                  <el-button type="primary" @click="saveTipsSave">{{i18n.tipsDone}}</el-button>
+              </span>
+            </el-dialog>
+            <div v-if="config.dragSelect" class="selection" :style="selectionBoxStyling"></div>
+        </div>
+        <script src="../lib/lodash.min.js"></script>
+        <script src="../lib/jQuery.js"></script> 
+        <script src="../lib/jquery-ui.custom.min.js"></script>
+        <script src="../lib/dragdrop/excanvas.min.js"></script> 
+        <script src="../lib/dragdrop/jquery.event.drag-2.2.js"></script> 
+        <script src="../lib/dragdrop/jquery.event.drag.live-2.2.js"></script> 
+        <script src="../lib/dragdrop/jquery.event.drop-2.2.js"></script> 
+        <script src="../lib/dragdrop/jquery.event.drop.live-2.2.js"></script> 
+        <script src="../js/iconfont.js"></script>
+        <script src="../js/utils.js"></script>
+        <script src="../js/tj.js"></script>
+        <script src="../js/config.js"></script>
+        <script src="../js/appConfig.js"></script>
+        <script src="../js/downloader.js"></script>
+        <script src="../js/bigImgParser.js"></script>
+        <script src="../js/item.js"></script>
+        <script src="i18n.js"></script>
+        <script src="output.js"></script>
+        <div>
+            <link rel="stylesheet" href="../lib/photoswipe/photoswipe.css"> 
+            <link rel="stylesheet" href="../lib/photoswipe/default-skin/default-skin.css"> 
+            <script src="../lib/photoswipe/photoswipe.min.js"></script> 
+            <script src="../lib/photoswipe/photoswipe-ui-default.min.js"></script>
+            <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="pswp__bg"></div>
+                <div class="pswp__scroll-wrap">
+                    <div class="pswp__container">
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                    </div>
+                    <div class="pswp__ui pswp__ui--hidden">
+                        <div class="pswp__top-bar">
+                            <div class="pswp__counter"></div>
+                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                            <button class="pswp__button pswp__button--share" title="Share"></button>
+                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                            <div class="pswp__preloader">
+                                <div class="pswp__preloader__icn">
+                                    <div class="pswp__preloader__cut">
+                                        <div class="pswp__preloader__donut"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div class="pswp__share-tooltip"></div> 
+                        </div>
+
+                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                        </button>
+
+                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                        </button>
+
+                        <div class="pswp__caption">
+                            <div class="pswp__caption__center"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

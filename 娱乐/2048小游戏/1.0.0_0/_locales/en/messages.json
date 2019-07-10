@@ -1,0 +1,56 @@
+{
+   "2048_tile": {
+      "message": " 2048 tile!"
+   },
+   "app_desc": {
+      "message": "Play 2048 in the popup!!! Automatically save records, the highest score in history."
+   },
+   "app_name": {
+      "message": "2048 In Popup"
+   },
+   "app_short_name": {
+      "message": "2048"
+   },
+   "arrow_keys": {
+      "message": "arrow keys"
+   },
+   "best": {
+      "message": "Best"
+   },
+   "game_over": {
+      "message": "Game over!"
+   },
+   "how_to_play": {
+      "message": "How to play:"
+   },
+   "join_the_numbers": {
+      "message": "Join the numbers and get to the "
+   },
+   "keep_going": {
+      "message": "Keep going"
+   },
+   "merge_into_one": {
+      "message": "merge into one!"
+   },
+   "new_game": {
+      "message": "New Game"
+   },
+   "popup_desc": {
+      "message": "Play 2048 in the popup!!!\n\n Automatically save records, the highest score in history."
+   },
+   "score": {
+      "message": "Score"
+   },
+   "to_move_tiles": {
+      "message": " to move the tiles. When two tiles with the same number touch, they "
+   },
+   "try_again": {
+      "message": "Try again"
+   },
+   "use_your": {
+      "message": " Use your "
+   },
+   "you_win": {
+      "message": "You win!"
+   }
+}
