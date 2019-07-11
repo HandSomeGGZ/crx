@@ -1,0 +1,1 @@
+$(function(){$("[tr]").each(function(){var t=$(this).attr("tr"),s=chrome.i18n.getMessage(t);s?$(this).html(s):settings.showMissingTranslations&&$(this).html("["+t+"]<small>"+$(this).text()+"</small>")})});

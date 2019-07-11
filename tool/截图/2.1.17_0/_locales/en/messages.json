@@ -1,0 +1,140 @@
+{
+   "allpage": {
+      "message": "All page screenshot"
+   },
+   "before_taking_screenshot": {
+      "message": "before taking screenshot"
+   },
+   "cancel": {
+      "message": "cancel"
+   },
+   "canceled": {
+      "message": "Taking capture canceled!"
+   },
+   "cannotscroll": {
+      "message": "Cannot scroll the page\u003Cbr>\u003Cbr/>Try to reopen this tab"
+   },
+   "changeheaders": {
+      "message": "Change Header and Footer"
+   },
+   "createimage": {
+      "message": " Creating the image file..."
+   },
+   "date": {
+      "message": "Date"
+   },
+   "description": {
+      "message": "Awesome high quality screenshots of any webpage. Like no other extension, it is elegant and simple to use. It just works!"
+   },
+   "dir": {
+      "message": "ltr"
+   },
+   "disable": {
+      "message": "Disable"
+   },
+   "enable": {
+      "message": "Enable"
+   },
+   "filebug": {
+      "message": "File a bug report"
+   },
+   "footer": {
+      "message": "Footer"
+   },
+   "header": {
+      "message": "Header"
+   },
+   "height": {
+      "message": "height"
+   },
+   "imagesize": {
+      "message": "Image Size:"
+   },
+   "likeresult": {
+      "message": "Like? write a nice comment, and give 5 stars"
+   },
+   "loadcapturescript": {
+      "message": "Loading Capture Script..."
+   },
+   "must_reload_tabs": {
+      "message": "Must reload every page, before take effects"
+   },
+   "name": {
+      "message": "Webpage Screenshot Free"
+   },
+   "name_sb": {
+      "message": "SelectionBar"
+   },
+   "new": {
+      "message": "NEW"
+   },
+   "noall": {
+      "message": "Cannot scroll this page (Extensions cannot work on internal Chrome pages nor on Chrome extensions gallery)"
+   },
+   "nolocal": {
+      "message": "To Capture whole screen of local files, you must install a small plugin"
+   },
+   "noresize": {
+      "message": "No resize"
+   },
+   "on_this_page": {
+      "message": "on this page"
+   },
+   "open": {
+      "message": "Edit"
+   },
+   "openimage": {
+      "message": "Click here to open the image"
+   },
+   "or": {
+      "message": "or"
+   },
+   "preview": {
+      "message": "Preview:"
+   },
+   "resize": {
+      "message": "Resize to: "
+   },
+   "resizebefore": {
+      "message": "Resize window before the capture"
+   },
+   "save": {
+      "message": "Save Local"
+   },
+   "screenshot_delay": {
+      "message": "Screenshot Delay"
+   },
+   "seconds": {
+      "message": "seconds"
+   },
+   "settings": {
+      "message": "settings"
+   },
+   "share": {
+      "message": "Save online"
+   },
+   "takecapture": {
+      "message": "Take Capture Now"
+   },
+   "takingcapture": {
+      "message": "Taking capture"
+   },
+   "tosavemessage": {
+      "message": "To save the Image, right click on it and choose \"Save Image\""
+   },
+   "url": {
+      "message": "URL"
+   },
+   "visiblescreenshot": {
+      "message": "Visible screenshot"
+   },
+   "wait": {
+      "message": "wait"
+   },
+   "width": {
+      "message": "width"
+   },
+   "zoom": {
+      "message": "Zoom"
+   }
+}

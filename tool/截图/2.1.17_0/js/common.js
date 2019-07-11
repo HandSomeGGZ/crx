@@ -1,0 +1,1 @@
+function cleanUp(t){return t?(t=-1!=(t=$.trim(t)).search(/^https?\:\/\//)?t.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i,""):t.match(/^([^\/?#]+)(?:[\/?#]|$)/i,""))[1]:t}function objectUrlToBlob(t,n){var o=new XMLHttpRequest;o.open("GET",t,!0),o.responseType="blob",o.onload=function(t){200==this.status&&n(this.response)},o.send()}function noop(){}
