@@ -1,0 +1,1 @@
+function $load(t){window.$?$(t):setTimeout($load.bind(this,t),50)}$load(function(){$("[autoselect]").on("click",function(){$(this).select()});var t=$(".link-copy").click(function(s){s.preventDefault();var c=$(this),e=$(c.attr("href"));postMessage(JSON.stringify({data:"copyText",text:e.val()}),"*"),t.removeClass("copy-success"),c.addClass("copy-success")})});

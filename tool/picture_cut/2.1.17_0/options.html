@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>Settings - Webpage Screenshot Free</title>
+    <script src="js/analytics.js"></script>
+    <script src="libs/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script src="settings.js"></script>
+    <script src="oauth2/oauth2.js"></script>
+    <script src="extension.js"></script>
+    <script src="js/permissions.js"></script>
+    <script src="js/uploady.js"></script>
+    <script src="uploady.js"></script>
+    <script src="options.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/options.css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body class="uploady-init">
+<div class="container">
+    <form action="?" method="GET" >
+        <div class="jumbotron">
+            <div class="logo">
+            </div>
+
+            <h1>Free Webpage Screenshot</h1>
+
+            <p class="lead">All your screenshots are kept private. Only you have the right to share and manage them.</p>
+        </div>
+
+        <h2>Sharing Settings</h2>
+
+        <div class="alert alert-success uploady-show-connected">
+            <a class="uploady-disconnect btn btn-danger btn-xs pull-right"><i class="fa fa-times"></i> Disconnect my current user</a>
+            Connected to <b class="uploady-email">aidaskk@gmail.com</b>
+        </div>
+
+
+        <div class="alert alert-warning uploady-show-temporary">
+            Your screenshots are stored in a <b>temporary account</b>. You will loose access to manage them in <b
+          class="uploady-expiration-time">30 days</b> unless you register or login.
+            <hr/>
+            <a class="btn btn-warning uploady-connect"><i class="fa fa-plus"></i> Connect my temporary account with Uploady</a>
+            <a class="uploady-disconnect btn btn-danger pull-right"><i class="fa fa-times"></i> Disconnect my current user</a>
+        </div>
+
+        <div class="marketing">
+            <h4>Why should I register?</h4>
+
+            <p>With connected account you will be able to delete, share, view and edit your uploaded screenshots.</p>
+
+            <h4>Why my screenshots are saved to Uploady?</h4>
+
+            <p>Uploady provides a secure and private cloud storage, which has a perfect user interface to manage your images. It is both, elegant and simple to use.</p>
+        </div>
+
+
+
+        <hr/>
+        <h2>Commands and shortcuts</h2>
+
+        <div class="form-group">
+            <label class="control-label">Settings must be set in chrome configuration page:</label>
+            <input class="form-control" value="chrome://extensions/configureCommands" readonly/>
+        </div>
+        <p>Default shortcuts are:</p>
+        <ul>
+            <li><b>Alt + S</b> - make a Screenshot</li>
+            <li><b>Alt + Shift + S</b> - make a full page screenshot</li>
+            <li><b>Alt + R</b> - make a screenshot of a <u>R</u>egion</li>
+        </ul>
+
+        <hr/>
+        <h2>Image Settings</h2>
+
+
+        <div class="form-group">
+            <label class="control-label">Image Header:</label>
+            <input class="localStorage form-control" name="txtHeader"/>
+            <span class="help-block">%U = Screenshot url,  %D = Date</span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Image Footer:</label>
+            <input class="localStorage form-control" name="txtFotter"/>
+            <span class="help-block">%U = Screenshot url,  %D = Date</span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" tag="screenshot_delay"></label>
+            <span class="msg" tag="wait"></span>
+            <select class="localStorage form-control" name="delay">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
+            <span class="msg" tag="seconds"></span>&nbsp;<span class=msg tag="before_taking_screenshot"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Whole page Screenshot Speed</label>
+            <select class="localStorage form-control" name="speed">
+                <option value=0>Very Very Fast</option>
+                <option value=100>Very Fast</option>
+                <option value=200>Fast</option>
+                <option value=300>Normal</option>
+                <option value=400>Slow</option>
+                <option value=500>Very Slow</option>
+                <option value=1000>Very Very Slow</option>
+            </select> Too fast, can make holes in the image.
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
